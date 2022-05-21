@@ -1,0 +1,18 @@
+"service": "${self:custom.config.name}"
+"provider":
+  "name": "aws"
+  "runtime": "nodejs12.x"
+"layers":
+  "ssh2":
+    "path": "layer"
+    "description": "SSH2 External node modules layer"
+    "name": "${self:custom.config.name}"
+    "compatibleRuntimes":
+      - "nodejs12.x"
+      - "nodejs14.x"
+      - "nodejs16.x"
+    "licenseInfo": "LGPL"
+"resources":
+  "Description": "SSH2 layer stack"
+"custom":
+  "config": "${file(./config.json)}"
